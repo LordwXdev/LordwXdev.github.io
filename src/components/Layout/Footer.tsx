@@ -1,20 +1,23 @@
-import React from 'react';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 py-12 text-white">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div>
-          <h3 className="text-2xl font-bold tracking-tighter uppercase">Lord</h3>
-          <p className="text-gray-400 mt-2">© 2026 All Rights Reserved.</p>
+    <footer className="bg-white py-12 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+        <div className="flex gap-6 mb-4">
+          <a className="text-gray-400 hover:text-[#FF8C00]">
+            <Github size={24} />
+          </a>
+          <a className="text-gray-400 hover:text-[#FF8C00]">
+            <Linkedin size={24} />
+          </a>
+          <a className="text-gray-400 hover:text-[#FF8C00]">
+            <Twitter size={24} />
+          </a>
         </div>
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-[#FF8C00] transition"><Github size={24} /></a>
-          <a href="#" className="hover:text-[#FF8C00] transition"><Linkedin size={24} /></a>
-          <a href="#" className="hover:text-[#FF8C00] transition"><Twitter size={24} /></a>
-          <a href="#" className="hover:text-[#FF8C00] transition"><Mail size={24} /></a>
-        </div>
+        <p className="text-gray-500 text-sm">
+          © 2026 Lord Portfolio. All rights reserved.
+        </p>
       </div>
     </footer>
   );

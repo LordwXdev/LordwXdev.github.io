@@ -12,20 +12,20 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ name, title, rating, rev
   const stars = Array.from({ length: 5 }, (_, i) => (
     <Star
       key={i}
-      size={20}
+      size={18}
       className={i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}
     />
   ));
 
   return (
-    <div className="h-full p-8 bg-white rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl flex flex-col">
-      <div className="flex mb-4">{stars}</div>
-      <p className="text-gray-700 italic flex-grow mb-6 text-lg line-clamp-4">
+    <div className="h-full p-8 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+      <div className="flex mb-4 gap-1">{stars}</div>
+      <p className="text-gray-600 italic mb-6 text-lg leading-relaxed">
         &ldquo;{review}&rdquo;
       </p>
-      <div className="mt-auto pt-4 border-t border-gray-100">
-        <h4 className="font-bold text-lg text-gray-900">{name}</h4>
-        <p className="text-sm text-[#FF8C00]">{title}</p>
+      <div className="mt-auto">
+        <h4 className="font-bold text-gray-900 text-lg">{name}</h4>
+        <p className="text-sm text-[#FF8C00] font-medium uppercase tracking-wider">{title}</p>
       </div>
     </div>
   );
