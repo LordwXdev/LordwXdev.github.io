@@ -503,13 +503,16 @@ video {
   display: none;
 }
 
+/* ================================
+   GLOBAL & BACKGROUND (A1 gradient)
+   ================================ */
 html, body {
   margin: 0;
   padding: 0;
-  /*overflow: hidden;*/
+  overflow-x: hidden;
+  height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #fff;
-
   background:
     radial-gradient(circle at 0% 0%, #4fa5ff 0%, #3c7dff 25%, transparent 55%),
     radial-gradient(circle at 80% 20%, #9b5bff 0%, #6737ff 30%, transparent 60%),
@@ -517,35 +520,55 @@ html, body {
   background-color: #000;
 }
 
-
-/* Center content */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 10;
-}
-
-/* Mouse trail animation */
-.trail {
+/* =======================
+   NAVIGATION BAR
+   ======================= */
+nav {
   position: fixed;
-  width: 250px;
-  height: 250px;
-  pointer-events: none;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.6;
-  animation: fadeOut 1s linear forwards;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 40px;
+  padding: 10px 25px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 
-@keyframes fadeOut {
-  0% { opacity: 0.7; }
-  100% { opacity: 0; }
+nav a {
+  text-decoration: none;
+  color: #E2E8F0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  transition: 0.25s;
+  font-weight: 500;
+  cursor: pointer;
 }
-/* === Hero bubble homepage specific styles === */
 
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+nav a.active {
+  background: rgba(255,255,255,0.22);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* =======================
+   CANVAS FOR BUBBLES
+   ======================= */
 #bubble-canvas {
   position: fixed;
   inset: 0;
@@ -554,6 +577,9 @@ html, body {
   z-index: 1;
 }
 
+/* =======================
+   LEFT CONTENT
+   ======================= */
 #center-content {
   position: absolute;
   top: 50%;
@@ -617,8 +643,9 @@ html, body {
   50% { opacity: 0; }
 }
 
-/* Right graphics */
-
+/* =======================
+   RIGHT GRAPHICS
+   ======================= */
 #hero-graphics {
   position: absolute;
   top: 59%;
@@ -644,13 +671,6 @@ html, body {
 }
 
 @media (max-width: 900px) {
-  #center-content {
-    left: 8vw;
-    flex-direction: column;
-    text-align: center;
-  }
-  #hero-graphics {
-    display: none;
-  }
+  #center-content { left: 8vw; flex-direction: column; text-align: center; }
+  #hero-graphics { display: none; }
 }
-

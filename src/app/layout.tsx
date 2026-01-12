@@ -1,9 +1,9 @@
 import "./globals.css";
-import React from "react";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Lord Portfolio",
-  description: "Modern Developer Portfolio",
+  description: "Creative Developer Portfolio",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
