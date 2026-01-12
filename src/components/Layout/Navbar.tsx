@@ -1,74 +1,32 @@
-// src/components/Layout/Navbar.tsx
-'use client';
+"use client";
+import React from 'react';
+import { Home, User, Folder, Tool, MessageSquare, Heart, HelpCircle, BookOpen } from 'lucide-react';
 
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import Link from 'next/link';
-
-const navLinks = [
-  { name: 'Services', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Contact', href: '#contact' },
-];
-
-export const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar() {
+  const navLinks = [
+    { name: 'Home', icon: <Home size={18} />, active: true },
+    { name: 'About', icon: <User size={18} /> },
+    { name: 'Projects', icon: <Folder size={18} /> },
+    { name: 'Services', icon: <BookOpen size={18} /> },
+    { name: 'Contact', icon: <MessageSquare size={18} /> },
+    { name: 'Testimonials', icon: <Heart size={18} /> },
+    { name: 'FAQ', icon: <HelpCircle size={18} /> },
+    { name: 'Blog', icon: <BookOpen size={18} /> },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        
-        {/* Logo/Name */}
-        <Link href="/" className="text-xl font-bold text-gray-900 transition-colors hover:text-primary">
-          [Your Name]
-        </Link>
-
-
-        {/* Desktop Menu (> 1024px) */}
-        <div className="hidden lg:flex space-x-8">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              className="text-gray-600 hover:text-primary transition duration-200 font-medium"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile Menu Button (< 640px) */}
-        <div className="lg:hidden">
-          <button 
-            onClick={() => setIsOpen(!isOpen)} 
-            className="text-gray-600 hover:text-primary focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu Dropdown (Active when < 640px and isOpen is true) */}
-      <div 
-        className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-64 opacity-100 py-2' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}
-      >
-        <div className="flex flex-col space-y-2 px-4">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="block py-2 text-gray-700 hover:bg-gray-100 px-3 rounded transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </header>
+    <nav className="fixed top-[15px] left-1/2 -translate-x-1/2 z-[100] bg-white/10 backdrop-blur-[14px] rounded-[40px] px-6 py-2.5 flex items-center gap-4 border border-white/15 shadow-2xl">
+      {navLinks.map((link, idx) => (
+        <a
+          key={idx}
+          href="#"
+          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-[30px] text-[0.95rem] transition-all duration-200 hover:bg-white/15 no-underline
+            ${link.active ? 'bg-white/20 text-white font-semibold' : 'text-slate-200 font-medium'}`}
+        >
+          <span className="opacity-90">{link.icon}</span>
+          {link.name}
+        </a>
+      ))}
+    </nav>
   );
-};
+}
