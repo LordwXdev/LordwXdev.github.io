@@ -1,30 +1,29 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export default function Navbar() {
-  // This tracks which tab is currently selected
   const [activeTab, setActiveTab] = useState('Home');
 
-  const navLinks = [
+  const links = [
     { name: 'Home', icon: '🏠' },
     { name: 'About', icon: '👤' },
-    { name: 'Projects', icon: '📂' },
+    { name: 'Projects', icon: '📁' },
     { name: 'Services', icon: '🧰' },
     { name: 'Contact', icon: '💬' },
-    { name: 'Testimonials', icon: '💖' }
+    { name: 'Testimonials', icon: '❤️' },
+    { name: 'FAQ', icon: '❓' },
+    { name: 'Blog', icon: '📰' }
   ];
 
   return (
-    <nav className="glass-nav">
-      {navLinks.map((link) => (
+    <nav>
+      {links.map((link) => (
         <a
           key={link.name}
-          href={`#${link.name.toLowerCase()}`}
+          className={activeTab === link.name ? 'active' : ''}
           onClick={() => setActiveTab(link.name)}
-          className={activeTab === link.name ? 'nav-item active' : 'nav-item'}
         >
-          <span className="nav-icon">{link.icon}</span>
-          <span className="nav-text">{link.name}</span>
+          <span>{link.icon}</span> {link.name}
         </a>
       ))}
     </nav>

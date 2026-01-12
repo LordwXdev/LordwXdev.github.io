@@ -6,14 +6,13 @@ export default function HeroSection() {
   const typingRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    // === BUBBLE ENGINE (YOUR EXACT CODE) ===
+    // === BUBBLE ENGINE ===
     const canvas = canvasRef.current!;
     const ctx = canvas.getContext("2d")!;
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
     const bubbles: any[] = [];
     const cursor = { x: width / 2, y: height / 2, radius: 90, active: false };
-    const BUBBLE_COUNT = 38;
 
     class Bubble {
       radius: number; baseX: number; baseY: number; x: number; y: number;
@@ -22,10 +21,8 @@ export default function HeroSection() {
         this.radius = 26 + Math.random() * 30;
         this.baseX = Math.random() * width;
         this.baseY = Math.random() * height;
-        this.x = this.baseX;
-        this.y = this.baseY;
-        this.vx = 0; this.vy = 0;
-        this.mass = this.radius * 0.06;
+        this.x = this.baseX; this.y = this.baseY;
+        this.vx = 0; this.vy = 0; this.mass = this.radius * 0.06;
       }
       update() {
         const dx0 = this.baseX - this.x, dy0 = this.baseY - this.y;
@@ -55,7 +52,7 @@ export default function HeroSection() {
       }
     }
 
-    for (let i = 0; i < BUBBLE_COUNT; i++) bubbles.push(new Bubble());
+    for (let i = 0; i < 38; i++) bubbles.push(new Bubble());
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
       bubbles.forEach(b => { b.update(); b.draw(); });
@@ -64,14 +61,12 @@ export default function HeroSection() {
     animate();
 
     const handleMouseMove = (e: MouseEvent) => { cursor.x = e.clientX; cursor.y = e.clientY; cursor.active = true; };
-    const handleMouseLeave = () => cursor.active = false;
     const handleResize = () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; };
-
+    
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseleave', handleMouseLeave);
     window.addEventListener('resize', handleResize);
 
-    // === TYPEWRITER (YOUR EXACT CODE) ===
+    // === TYPEWRITER ===
     const roles = ["Software Developer", "Web Developer", "Mobile Developer"];
     let rIndex = 0, cIndex = 0, deleting = false;
     let typeTimeout: any;
@@ -82,18 +77,17 @@ export default function HeroSection() {
       const text = roles[rIndex];
       if (!deleting) {
         el.textContent = text.slice(0, cIndex++);
-        if (cIndex > text.length) { deleting = true; typeTimeout = setTimeout(typeLoop, 1200); return; }
+        if (cIndex > text.length) { deleting = true; typeTimeout = setTimeout(typeLoop, 1500); return; }
       } else {
         el.textContent = text.slice(0, --cIndex);
         if (cIndex === 0) { deleting = false; rIndex = (rIndex + 1) % roles.length; }
       }
-      typeTimeout = setTimeout(typeLoop, deleting ? 50 : 90);
+      typeTimeout = setTimeout(typeLoop, deleting ? 50 : 100);
     };
     typeLoop();
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('resize', handleResize);
       clearTimeout(typeTimeout);
     };
@@ -103,11 +97,11 @@ export default function HeroSection() {
     <section>
       <canvas id="bubble-canvas" ref={canvasRef}></canvas>
       <div id="center-content">
-        <img id="avatar" src="/images/avatar.jpg" alt="Lord" />
+        <img id="avatar" src="/images/avatar.jpg" alt="Profile" />
         <div id="text-block">
           <p className="welcome">Welcome</p>
           <h1>Hi, I am Lord</h1>
-          <h2><span id="typing" ref={typingRef}></span><span id="cursor">|</span></h2>
+          <div><span id="typing" ref={typingRef}></span><span id="cursor">|</span></div>
         </div>
       </div>
       <div id="hero-graphics">
@@ -118,7 +112,7 @@ export default function HeroSection() {
               <path d="M0,0 L0,6 L6,3 z" fill="#A5B4FF" />
             </marker>
           </defs>
-          <path d="M 40,10 C 120,60 160,100 110,150" fill="none" stroke="#A5B4FF" strokeWidth="3" markerEnd="url(#arrowhead)" />
+          <path d="M 40,10 C 120,60 160,100 110,150" fill="none" stroke="#A5B4FF" strokeWidth="4" markerEnd="url(#arrowhead)" />
         </svg>
         <img id="robot-img" src="/images/robot.png" alt="Robot" />
       </div>
