@@ -1,0 +1,15 @@
+import React from 'react'
+
+type Props = {
+  children?: React.ReactNode
+}
+
+const AppContainer = ({ children }: Props) => {
+  return (
+    <div className="app-container w-[100vw] overflow-hidden glass glass-hover rounded-apple backdrop-blur-apple">
+      {children}
+    </div>
+  )
+}
+
+export default AppContainer
