@@ -46,15 +46,17 @@ const AppHeader = () => {
                 className={`
                   px-4 py-2 rounded-full
                   font-medium
-                  text-gray-900 dark:text-gray-200
+                  /* Updated text colors and hover state */
+                  text-foreground/80 
+                  hover:text-primary 
                   glass backdrop-blur-apple
                   transition-all duration-200
                   hover:bg-primary/20 hover:scale-105
                   active:scale-95
                   ${
                     activeId === item.id
-                      ? 'bg-primary/30'
-                      : 'bg-primary/10'
+                      ? 'bg-primary/30 text-primary'
+                      : 'bg-primary/5'
                   }
                 `}
               >
@@ -64,7 +66,9 @@ const AppHeader = () => {
           ))}
 
           <li>
-            <Button size="sm">Download CV</Button>
+            <Button size="sm" className="hover:bg-primary/90 transition-colors">
+              Download CV
+            </Button>
           </li>
           <li>
             <ThemeToggle />
@@ -75,11 +79,11 @@ const AppHeader = () => {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" className="glass">
+              <Button variant="ghost" className="glass hover:text-primary">
                 <MenuIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="glass rounded-apple">
+            <SheetContent side="right" className="glass rounded-apple border-l border-border/50">
               <ul className="flex flex-col items-end space-y-5 mt-10 p-4">
                 {headerList.map((item) => (
                   <li key={item.id}>
@@ -88,13 +92,15 @@ const AppHeader = () => {
                       className={`
                         px-4 py-2 rounded-full
                         font-medium
+                        text-foreground/80
+                        hover:text-primary
                         glass backdrop-blur-apple
                         transition-all duration-200
                         hover:bg-primary/20 hover:scale-105
                         active:scale-95
                         ${
                           activeId === item.id
-                            ? 'bg-primary/30'
+                            ? 'bg-primary/30 text-primary'
                             : 'bg-primary/10'
                         }
                       `}
@@ -104,7 +110,7 @@ const AppHeader = () => {
                   </li>
                 ))}
                 <li>
-                  <Button size="sm">Download CV</Button>
+                  <Button size="sm" className="w-full">Download CV</Button>
                 </li>
                 <li>
                   <ThemeToggle />

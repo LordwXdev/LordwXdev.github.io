@@ -12,7 +12,7 @@ const AppFooter = () => {
     <>
       <div className="bg-card flex flex-col justify-center items-center py-15">
         <div className="text-xl text-gray-400 font-extrabold md:text-4xl uppercase mt-5">
-          coding with truong
+          coding with Lordwish
         </div>
         <ul className="w-3/4 md:w-full items-center flex flex-wrap justify-center mt-5 md:mt-15 space-x-4 space-y-2 md:space-x-10">
           {headerList.map((item) => (
@@ -41,7 +41,7 @@ const AppFooter = () => {
         </div>
       </div>
       <footer className="bg-gray-900 py-5 text-center text-sm text-white">
-        &copy; {new Date().getFullYear()} Code by <b className="text-primary">Truong Nguyen</b> &
+        &copy; {new Date().getFullYear()} Code by <b className="text-primary">Lordwish</b> &
         Design by <b className="text-primary">Fawziuiux</b>. All rights reserved.
       </footer>
     </>

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Hi I am Truong - Full Stack Developer',
-  description: 'Portfolio of Truong Nguyen - Full Stack Developer',
+  title: 'Hi I am Lordwish -  Software Developer',
+  description: 'Portfolio of Lordwish - Software Developer',
 };
 
 export default function RootLayout({

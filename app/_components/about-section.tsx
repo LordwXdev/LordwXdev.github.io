@@ -9,7 +9,7 @@ const AboutSection = () => {
   return (
     <TwoColSection id="about">
       <div className="flex justify-center md:justify-start items-center">
-        <AvatarProfile src="/images/user/avatar.png" alt="truong-nguyen-avatar" />
+        <AvatarProfile src="/images/user/avatar.png" alt="Lordwish-avatar" />
       </div>
       <div>
         <SectionTitle name="About Me" />
