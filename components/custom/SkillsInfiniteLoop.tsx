@@ -27,7 +27,7 @@ const ALL_SKILLS = [
   { name: "MongoDB", slug: "mongodb", color: "47A248" },
   { name: "PostgreSQL", slug: "postgresql", color: "4169E1" },
   { name: "Docker", slug: "docker", color: "2496ED" },
-  { name: "AWS", slug: "amazonaws", color: "FF9900" },
+  { name: "AWS", slug: "amazonwebservices", color: "FF9900" },
   { name: "Linux", slug: "linux", color: "FCC624" },
   
   // Design
