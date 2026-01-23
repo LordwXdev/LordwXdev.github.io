@@ -171,4 +171,43 @@
       inset 0 1px 0 rgba(255,255,255,0.4),
       0 16px 48px rgba(0,0,0,0.18);
   }
+  /* ===== Infinite Skills Marquee ===== */
+
+.marquee {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.skill-pill {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  color: var(--foreground);
+}
+.glass-water {
+  /* This ensures the 'water' reflection has enough surface to show up */
+  min-height: 45px; 
+  display: flex;
+  align-items: center;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile tuning */
+@media (max-width: 640px) {
+  .marquee {
+    animation-duration: 45s;
+  }
+}
+
 }

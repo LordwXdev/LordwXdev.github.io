@@ -33,6 +33,7 @@ export default function Home() {
         
       </main>
       
+      
       <AppFooter />
     </div>
   )
