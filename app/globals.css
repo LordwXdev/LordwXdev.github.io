@@ -209,5 +209,14 @@
     animation-duration: 45s;
   }
 }
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
 
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh; /* Every section becomes a full slide */
+}
 }
