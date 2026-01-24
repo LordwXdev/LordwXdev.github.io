@@ -11,7 +11,14 @@ import {
   GitBranch, 
   Cloud, 
   Zap, 
-  ShieldCheck 
+  ShieldCheck,
+  Smartphone,   // New: For Mobile
+  Cpu,          // New: For AI
+  Palette,      // New: For Branding
+  Play,         // New: For Motion/Animation
+  Camera,       // New: For Photography
+  PenTool,      // New: For Illustration/Design
+  Lock          // New: For Privacy
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -25,6 +32,7 @@ const ServiceIcon = ({ name }: { name: string }) => {
   const iconProps = { size: 44, strokeWidth: 2, className: "text-orange-500" }
   const n = name.toLowerCase()
 
+  // ORIGINAL LOGIC
   if (n.includes('frontend')) return <Monitor {...iconProps} />
   if (n.includes('backend')) return <Server {...iconProps} />
   if (n.includes('microservices')) return <Layers {...iconProps} />
@@ -33,6 +41,15 @@ const ServiceIcon = ({ name }: { name: string }) => {
   if (n.includes('cloud')) return <Cloud {...iconProps} />
   if (n.includes('performance')) return <Zap {...iconProps} />
   if (n.includes('testing')) return <ShieldCheck {...iconProps} />
+
+  // NEW SERVICES LOGIC
+  if (n.includes('mobile')) return <Smartphone {...iconProps} />
+  if (n.includes('ai') || n.includes('automation') || n.includes('machine')) return <Cpu {...iconProps} />
+  if (n.includes('security') || n.includes('privacy')) return <Lock {...iconProps} />
+  if (n.includes('branding') || n.includes('identity')) return <Palette {...iconProps} />
+  if (n.includes('animation') || n.includes('motion')) return <Play {...iconProps} />
+  if (n.includes('photography') || n.includes('image')) return <Camera {...iconProps} />
+  if (n.includes('illustration') || n.includes('digital')) return <PenTool {...iconProps} />
   
   return <Monitor {...iconProps} />
 }

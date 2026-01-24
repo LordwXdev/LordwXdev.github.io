@@ -55,7 +55,7 @@ const AboutSection = () => {
       <div className="w-full mt-2">
         <div className="flex items-center w-full mb-2">
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-border to-border" />
-          <span className="px-6 text-[10px] uppercase tracking-[0.5em] text-orange-500 font-black whitespace-nowrap">Tech Ecosystem</span>
+          <span className="px-6 text-[10px] uppercase tracking-[0.5em] text-orange-500 font-black whitespace-nowrap">Tech Stack Ecosystem</span>
           <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-border to-border" />
         </div>
         <div className="py-2 relative"><SkillsInfiniteLoop /></div>
@@ -192,7 +192,7 @@ const IPhoneMockup = () => {
 
         {/* CARD 5: RESUME (Infinite loop point) */}
         <div className={`${cardBg} rounded-[2.5rem] p-6 border-2 border-orange-500/20 flex flex-col items-center`}>
-           <h4 className={`${textColor} font-black text-center text-lg mb-6 uppercase italic`}>System.Download</h4>
+           <h4 className={`${textColor} font-black text-center text-lg mb-6 uppercase italic`}>My Resume</h4>
            <motion.a 
              href="/resume.pdf" download onClick={() => confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } })}
              animate={{ boxShadow: ["0px 0px 0px rgba(249,115,22,0.4)", "0px 0px 20px rgba(249,115,22,0.7)", "0px 0px 0px rgba(249,115,22,0.4)"] }}
