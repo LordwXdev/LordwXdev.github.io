@@ -2,14 +2,21 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+
+interface Skill {
+  name: string;
+  slug: string;
+  color: string;
+}
 
 const getLogo = (slug: string, color: string) => `https://cdn.simpleicons.org/${slug}/${color}`
 
-const ALL_SKILLS = [
+const ALL_SKILLS: Skill[] = [
   // Frontend
   { name: "React", slug: "react", color: "61DAFB" },
   { name: "TypeScript", slug: "typescript", color: "3178C6" },
-  /* Using 000000 for light mode, but you can use 'white' slug if your background is dark */
+  /* Using 333333 for light mode, but you can use 'white' slug if your background is dark */
   { name: "Next.js", slug: "nextdotjs", color: "333333" }, 
   { name: "Tailwind", slug: "tailwindcss", color: "06B6D4" },
   { name: "HTML5", slug: "html5", color: "E34F26" },
@@ -39,13 +46,15 @@ const ALL_SKILLS = [
   { name: "Procreate", slug: "procreate", color: "53E1AD" }
 ]
 
-const SkillCard = ({ skill }: { skill: any }) => (
+const SkillCard = ({ skill }: { skill: Skill }) => (
   <div className="flex items-center gap-3 px-5 py-3 glass glass-water mx-3 min-w-max rounded-2xl hover:scale-110 hover:bg-white/10 transition-all duration-300 group cursor-default">
-    <div className="w-8 h-8 flex items-center justify-center">
-      <img 
+    <div className="w-8 h-8 flex items-center justify-center relative">
+      <Image 
         src={getLogo(skill.slug, skill.color)} 
         alt={skill.name} 
-        /* REMOVED: filter grayscale - Logos now show in real color */
+        width={32}
+        height={32}
+        unoptimized // Necessary for external dynamic simpleicons URLs
         className="w-full h-full object-contain transition-transform duration-300 group-hover:rotate-12"
       />
     </div>

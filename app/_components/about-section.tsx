@@ -90,7 +90,7 @@ const IPhoneMockup = () => {
       <div className="absolute top-0 left-0 right-0 h-8 z-40 flex items-center justify-between px-8 pt-2">
         <span className={`text-[10px] font-bold ${isDark ? 'text-white' : 'text-black'}`}>{currentTime}</span>
         <div className="flex items-center gap-1">
-           <span className={`text-[8px] font-bold ${isDark ? 'text-white/60' : 'text-black/60'}`}>100%</span>
+           <span className={`text-[8px] font-bold ${isDark ? 'text-white/60' : 'text-black/60'}`}>100</span>
            <Battery size={14} className={isDark ? 'text-white' : 'text-black'} />
         </div>
         <div className={`w-20 h-6 ${isDark ? 'bg-[#1a1a1a]' : 'bg-[#e5e5e5]'} rounded-b-2xl absolute left-1/2 -translate-x-1/2 top-0`} />
@@ -108,7 +108,7 @@ const IPhoneMockup = () => {
       >
         {/* CARD 1: IDENTITY */}
         <div className="aspect-[9/16] w-full bg-orange-500 rounded-[2rem] p-6 flex flex-col justify-end relative">
-           <div className="absolute top-6 left-6 flex flex-col gap-2">
+            <div className="absolute top-6 left-6 flex flex-col gap-2">
               <div className="flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30 w-fit">
                 <MapPin size={10} className="text-white" />
                 <span className="text-[8px] font-bold text-white uppercase tracking-widest">Taipei / Remote</span>
@@ -117,18 +117,18 @@ const IPhoneMockup = () => {
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
                 <span className="text-[8px] font-black text-black uppercase tracking-tighter">Internship Ready</span>
               </div>
-           </div>
-           <h3 className="text-white text-3xl font-black italic tracking-tighter leading-tight uppercase">Lordwish<br/>Sylvaince</h3>
-           <p className="text-white/80 text-[10px] font-medium mt-2 leading-relaxed">Transforming ideas into impactful digital products.</p>
+            </div>
+            <h3 className="text-white text-3xl font-black italic tracking-tighter leading-tight uppercase">Lordwish<br/>Sylvaince</h3>
+            <p className="text-white/80 text-[10px] font-medium mt-2 leading-relaxed">Transforming ideas into impactful digital products.</p>
         </div>
 
         {/* CARD 2: SYSTEM SPECS */}
         <div className={`${cardBg} rounded-[2.5rem] p-5 border border-border/50`}>
-           <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4">
               <Cpu className="text-orange-500" size={16} />
               <span className="text-[10px] font-black uppercase tracking-widest text-orange-500">System Specs</span>
-           </div>
-           <div className="space-y-3">
+            </div>
+            <div className="space-y-3">
               <div className="flex justify-between border-b border-border/50 pb-2">
                 <span className="text-[10px] text-muted-foreground uppercase">Main Language</span>
                 <span className={`text-[10px] font-bold ${textColor}`}>C / C++</span>
@@ -141,16 +141,16 @@ const IPhoneMockup = () => {
                 <span className="text-[10px] text-muted-foreground uppercase">Academic Status</span>
                 <span className={`text-[10px] font-bold ${textColor}`}>CS Student</span>
               </div>
-           </div>
+            </div>
         </div>
 
         {/* CARD 3: ACTIVE PROCESSES (PROJECTS) */}
         <div className={`${cardBg} rounded-[2.5rem] p-5 border border-border/50`}>
-           <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4">
               <Zap className="text-yellow-500" size={16} />
               <span className="text-[10px] font-black uppercase tracking-widest text-yellow-500">Active Processes</span>
-           </div>
-           <div className="space-y-4">
+            </div>
+            <div className="space-y-4">
               <div>
                 <p className={`text-[11px] font-black ${textColor}`}>High-speed Trading Engine</p>
                 <div className="w-full bg-muted h-1 rounded-full mt-1.5 overflow-hidden">
@@ -161,46 +161,46 @@ const IPhoneMockup = () => {
                 <p className={`text-[11px] font-black ${textColor}`}>C++ Memory Optimization</p>
                 <p className="text-[9px] text-muted-foreground mt-1 tracking-tight">Current Learning Path</p>
               </div>
-           </div>
+            </div>
         </div>
 
         {/* CARD 3: LANGUAGES */}
         <div className={`${cardBg} rounded-[2.5rem] p-5 border border-border/50`}>
-           <div className="flex items-center gap-2 mb-3 text-blue-500">
+            <div className="flex items-center gap-2 mb-3 text-blue-500">
               <Languages size={16} />
               <span className="text-[10px] font-black uppercase tracking-widest">Linguistic Stack</span>
-           </div>
-           <div className="flex flex-wrap gap-2">
+            </div>
+            <div className="flex flex-wrap gap-2">
               {["Creole", "French", "English", "Spanish", "Mandarin"].map((l) => (
                 <span key={l} className="px-2 py-1 bg-muted/50 rounded text-[9px] font-bold uppercase">{l}</span>
               ))}
-           </div>
+            </div>
         </div>
 
         {/* CARD 4: SOCIALS */}
         <div className={`${cardBg} rounded-[2.5rem] p-6 border border-border/50`}>
-           <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-4 text-center underline">Connect with me</p>
-           <div className="grid grid-cols-3 gap-y-6 justify-items-center">
-              <a href="https://github.com/LordwXdev" target="_blank"><Github size={20} className="text-orange-500" /></a>
-              <a href="https://linkedin.com/in/Lordwish-SYLVAINCE" target="_blank"><Linkedin size={20} className="text-orange-500" /></a>
-              <a href="https://twitter.com/Lordwish058" target="_blank"><Twitter size={20} className="text-orange-500" /></a>
-              <a href="https://instagram.com/lordwish44" target="_blank"><Instagram size={20} className="text-orange-500" /></a>
-              <a href="https://facebook.com/lordwish_lord_sylvaince" target="_blank"><Facebook size={20} className="text-orange-500" /></a>
+            <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-4 text-center underline">Connect with me</p>
+            <div className="grid grid-cols-3 gap-y-6 justify-items-center">
+              <a href="https://github.com/LordwXdev" target="_blank" rel="noreferrer"><Github size={20} className="text-orange-500" /></a>
+              <a href="https://linkedin.com/in/Lordwish-SYLVAINCE" target="_blank" rel="noreferrer"><Linkedin size={20} className="text-orange-500" /></a>
+              <a href="https://twitter.com/Lordwish058" target="_blank" rel="noreferrer"><Twitter size={20} className="text-orange-500" /></a>
+              <a href="https://instagram.com/lordwish44" target="_blank" rel="noreferrer"><Instagram size={20} className="text-orange-500" /></a>
+              <a href="https://facebook.com/lordwish_lord_sylvaince" target="_blank" rel="noreferrer"><Facebook size={20} className="text-orange-500" /></a>
               <a href="mailto:lordwishsylvaince1236@gmail.com"><Mail size={20} className="text-orange-500" /></a>
-           </div>
+            </div>
         </div>
 
         {/* CARD 5: RESUME (Infinite loop point) */}
         <div className={`${cardBg} rounded-[2.5rem] p-6 border-2 border-orange-500/20 flex flex-col items-center`}>
-           <h4 className={`${textColor} font-black text-center text-lg mb-6 uppercase italic`}>My Resume</h4>
-           <motion.a 
-             href="/resume.pdf" download onClick={() => confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } })}
-             animate={{ boxShadow: ["0px 0px 0px rgba(249,115,22,0.4)", "0px 0px 20px rgba(249,115,22,0.7)", "0px 0px 0px rgba(249,115,22,0.4)"] }}
-             transition={{ duration: 2, repeat: Infinity }}
-             className="w-full py-4 bg-orange-500 text-white rounded-xl font-black text-xs uppercase tracking-widest text-center shadow-lg"
-           >
-             Get Resume
-           </motion.a>
+            <h4 className={`${textColor} font-black text-center text-lg mb-6 uppercase italic`}>My Resume</h4>
+            <motion.a 
+              href="/resume.pdf" download onClick={() => confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } })}
+              animate={{ boxShadow: ["0px 0px 0px rgba(249,115,22,0.4)", "0px 0px 20px rgba(249,115,22,0.7)", "0px 0px 0px rgba(249,115,22,0.4)"] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-full py-4 bg-orange-500 text-white rounded-xl font-black text-xs uppercase tracking-widest text-center shadow-lg"
+            >
+              Get Resume
+            </motion.a>
         </div>
       </motion.div>
     </div>

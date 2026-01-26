@@ -28,7 +28,7 @@ const PowerPointTransition = ({ children }: { children: React.ReactNode }) => (
 
 // Sub-component for the typing loop (Remains perfect and untouched)
 const RotatingText = () => {
-  const words = ["Hello, welcome!", "¡Hola, bienvenido!", "Olá, bem-vindo!", "Bonjour, bienvenue!", "Привет, добро пожаловать!", "Ciao, benvenuto!", "你好，歡迎！", "こんにちは、ようこそ！", "안녕하세요, 환英합니다!"]
+  const words = ["Hello, welcome!", "¡Hola, bienvenido!", "Olá, bem-vindo!", "Bonjour, bienvenue!", "Привет, добро пожаловать!", "Ciao, benvenuto!", "你好，歡迎！", "こんにちは、ようこそ！", "안녕하세요, ようこそ!"]
   const [index, setIndex] = useState(0)
   const [displayWord, setDisplayWord] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
@@ -91,13 +91,13 @@ const Hero = () => {
             </div>
 
             <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-8 text-foreground">
-              I'm <span className="text-orange-500">Lordwish</span>, <br className="hidden lg:block" />
+              I&apos;m <span className="text-orange-500">Lordwish</span>, <br className="hidden lg:block" />
               Software Developer
             </h1>
 
             <div className="border-l-0 lg:border-l-4 border-orange-500 pl-0 lg:pl-6 mb-10 max-w-md mx-auto lg:mx-0">
               <p className="text-muted-foreground italic text-lg leading-relaxed">
-                "I enjoy building software that solves real problems, turning ideas into reliable products through clean code and thoughtful architecture."
+                &quot;I enjoy building software that solves real problems, turning ideas into reliable products through clean code and thoughtful architecture.&quot;
               </p>
             </div>
 
