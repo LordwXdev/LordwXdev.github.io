@@ -65,7 +65,7 @@ const SkillCard = ({ skill }: { skill: Skill }) => (
 )
 
 const SkillsInfiniteLoop = () => {
-  const duplicated = [...ALL_SKILLS, ...ALL_SKILLS, ...ALL_SKILLS]
+  const duplicated: Skill[] = [...ALL_SKILLS, ...ALL_SKILLS, ...ALL_SKILLS]
   return (
     <div className="w-full overflow-hidden relative py-6">
       {/* Edge Fades: Makes logos look like they are appearing from thin air */}

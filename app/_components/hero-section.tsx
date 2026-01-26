@@ -11,6 +11,7 @@ import {
   Facebook, 
   ArrowUpRight 
 } from 'lucide-react'
+import Image from 'next/image'
 
 const PowerPointTransition = ({ children }: { children: React.ReactNode }) => (
   <motion.div
@@ -126,20 +127,29 @@ const Hero = () => {
             {/* Doodles */}
             <AnimatePresence>
               {hovered && (
-                <motion.img
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: -40 }}
                   exit={{ opacity: 0, y: 20 }}
-                  src="/images/user/doodles.png" 
-                  className="absolute bottom-10 lg:bottom-20 z-0 h-[250px] sm:h-[350px] lg:h-[400px] w-auto object-contain pointer-events-none -translate-x-[1cm]"
-                />
+                  className="absolute bottom-10 lg:bottom-20 z-0 h-[250px] sm:h-[350px] lg:h-[400px] w-auto pointer-events-none -translate-x-[1cm]"
+                >
+                  <Image
+                    src="/images/user/doodles.png"
+                    alt="Doodles"
+                    width={400}
+                    height={400}
+                    className="h-full w-auto object-contain"
+                  />
+                </motion.div>
               )}
             </AnimatePresence>
 
             {/* MAIN PORTRAIT */}
-            <img
+            <Image
               src="/images/user/avatar.png"
               alt="Lordwish"
+              width={654}
+              height={654}
               className="relative z-10 h-[380px] sm:h-[500px] lg:h-[654px] w-auto object-contain block -translate-x-[2.5cm] translate-y-[3.2cm]"
             />
             
