@@ -20,14 +20,13 @@ const PowerPointTransition = ({ children }: { children: React.ReactNode }) => (
     viewport={{ once: false, amount: 0.1 }}
     transition={{ 
       duration: 0.9, 
-      ease: [0.22, 1, 0.36, 1] // High-end cinematic curve
+      ease: [0.22, 1, 0.36, 1]
     }}
   >
     {children}
   </motion.div>
 );
 
-// Sub-component for the typing loop (Remains perfect and untouched)
 const RotatingText = () => {
   const words = ["Hello, welcome!", "¡Hola, bienvenido!", "Olá, bem-vindo!", "Bonjour, bienvenue!", "Привет, добро пожаловать!", "Ciao, benvenuto!", "你好，歡迎！", "こんにちは、ようこそ！", "안녕하세요, ようこそ!"]
   const [index, setIndex] = useState(0)
@@ -54,7 +53,7 @@ const RotatingText = () => {
     }
     const timer = setTimeout(handleTyping, speed)
     return () => clearTimeout(timer)
-  }, [displayWord, isDeleting, index, speed])
+  }, [displayWord, isDeleting, index, speed, words])
 
   return (
     <span className="inline-block min-w-[120px]">
@@ -82,10 +81,8 @@ const Hero = () => {
 
   return (
     <section className="relative w-full flex items-center bg-background overflow-hidden pt-[0.5cm] min-h-screen">
-      {/* WRAPPER ADDED HERE FOR THE SLIDE EFFECT */}
       <PowerPointTransition>
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 items-center lg:items-end gap-12 px-6 md:px-12 lg:px-20 pb-20">
-          {/* LEFT CONTENT */}
           <div className="relative z-20 text-center lg:text-left">
             <div className="inline-block mb-8 px-4 py-1 rounded-full border border-border bg-muted/30 text-sm font-medium backdrop-blur-md">
               <RotatingText />
@@ -102,7 +99,6 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* BUTTONS */}
             <div className="flex items-center gap-4 p-2 glass w-fit mx-auto lg:mx-0">
               <button className="px-8 py-4 rounded-full bg-orange-500 text-white font-bold flex items-center gap-2 hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/20">
                 Portfolio <ArrowUpRight size={18} />
@@ -113,7 +109,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* RIGHT IMAGE AREA */}
           <div
             className="relative w-full flex justify-center items-end mt-10 lg:mt-0"
             onMouseEnter={() => setHovered(true)}
@@ -121,10 +116,8 @@ const Hero = () => {
             onTouchStart={() => setHovered(true)}
             onTouchEnd={() => setHovered(false)}
           >
-            {/* Background Arc */}
             <div className="absolute bottom-0 left-1/2 -translate-x-[calc(50%+1cm)] w-[280px] sm:w-[400px] lg:w-[500px] h-[140px] sm:h-[200px] lg:h-[260px] bg-orange-500/80 dark:bg-orange-500/10 rounded-t-full z-0" />
 
-            {/* Doodles */}
             <AnimatePresence>
               {hovered && (
                 <motion.div
@@ -144,7 +137,6 @@ const Hero = () => {
               )}
             </AnimatePresence>
 
-            {/* MAIN PORTRAIT */}
             <Image
               src="/images/user/avatar.png"
               alt="Lordwish"
@@ -153,7 +145,6 @@ const Hero = () => {
               className="relative z-10 h-[380px] sm:h-[500px] lg:h-[654px] w-auto object-contain block -translate-x-[2.5cm] translate-y-[3.2cm]"
             />
             
-            {/* EXPERIENCE BADGE */}
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ 
@@ -170,7 +161,6 @@ const Hero = () => {
               <div className="text-sm text-slate-400 font-bold uppercase tracking-[0.2em]">And Building</div>
             </motion.div>
 
-            {/* SOCIALS */}
             <div className="absolute bottom-[-60px] lg:bottom-[-80px] flex gap-3 lg:gap-4 px-4 lg:px-6 py-4 z-20 glass -translate-x-[1cm] backdrop-blur-md border border-white/10 rounded-2xl">
               {socials.map((s, i) => (
                 <motion.a

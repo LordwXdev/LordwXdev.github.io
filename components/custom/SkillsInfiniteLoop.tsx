@@ -13,31 +13,23 @@ interface Skill {
 const getLogo = (slug: string, color: string) => `https://cdn.simpleicons.org/${slug}/${color}`
 
 const ALL_SKILLS: Skill[] = [
-  // Frontend
   { name: "React", slug: "react", color: "61DAFB" },
   { name: "TypeScript", slug: "typescript", color: "3178C6" },
-  /* Using 333333 for light mode, but you can use 'white' slug if your background is dark */
   { name: "Next.js", slug: "nextdotjs", color: "333333" }, 
   { name: "Tailwind", slug: "tailwindcss", color: "06B6D4" },
   { name: "HTML5", slug: "html5", color: "E34F26" },
   { name: "CSS3", slug: "css3", color: "1572B6" },
   { name: "JavaScript", slug: "javascript", color: "F7DF1E" },
-  
-  // Backend & Languages
   { name: "Node.js", slug: "nodedotjs", color: "339933" },
   { name: "Python", slug: "python", color: "3776AB" },
   { name: "Java", slug: "openjdk", color: "ED8B00" },
   { name: "Go", slug: "go", color: "00ADD8" },
   { name: "Ruby", slug: "ruby", color: "CC342D" },
-  
-  // Database & Tools
   { name: "MongoDB", slug: "mongodb", color: "47A248" },
   { name: "PostgreSQL", slug: "postgresql", color: "4169E1" },
   { name: "Docker", slug: "docker", color: "2496ED" },
   { name: "AWS", slug: "amazonwebservices", color: "FF9900" },
   { name: "Linux", slug: "linux", color: "FCC624" },
-  
-  // Design
   { name: "Figma", slug: "figma", color: "F24E1E" },
   { name: "Photoshop", slug: "adobephotoshop", color: "31A8FF" },
   { name: "Illustrator", slug: "adobeillustrator", color: "FF9A00" },
@@ -54,7 +46,7 @@ const SkillCard = ({ skill }: { skill: Skill }) => (
         alt={skill.name} 
         width={32}
         height={32}
-        unoptimized // Necessary for external dynamic simpleicons URLs
+        unoptimized
         className="w-full h-full object-contain transition-transform duration-300 group-hover:rotate-12"
       />
     </div>
@@ -68,7 +60,6 @@ const SkillsInfiniteLoop = () => {
   const duplicated: Skill[] = [...ALL_SKILLS, ...ALL_SKILLS, ...ALL_SKILLS]
   return (
     <div className="w-full overflow-hidden relative py-6">
-      {/* Edge Fades: Makes logos look like they are appearing from thin air */}
       <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 

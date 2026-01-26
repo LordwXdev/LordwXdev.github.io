@@ -11,15 +11,10 @@ export default function Home() {
     <div className="bg-background min-h-screen w-full transition-colors duration-300">
       <AppHeader />
       
-      {/* - mt-[80px]: Clears the navbar.
-        - w-full: Takes up 100% of the screen width (no side margins).
-        - px-0: Removes internal horizontal padding.
-      */}
       <main className="w-full mt-[-10px] bg-background">
         
         <Hero />
         
-        {/* Sections below the Hero */}
         <div className="w-full">
           <AboutSection />
           <ServiceSection />
