@@ -61,16 +61,18 @@ export const SERVICES: Service[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    frontImage: '/images/project/project-sample-1-1.png',
-    backImage: '/images/project/project-sample-1-2.png',
-    title: 'Booking Dashboard',
-    topics: ['React', 'Next.js', 'TypeScript', 'Dashboard System', 'Tailwind'],
+    frontImage: '/images/projects/palekreyol.png',
+    backImage: '/images/projects/palekreyol.png',
+    title: 'Pale Kreyol',
+    topics: ['Next.js', 'TypeScript', 'Tailwind', 'Linguistic Stack', 'Framer Motion'],
+    githubUrl: 'https://github.com/LordwXdev/pale-kreyol',
   },
   {
-    frontImage: '/images/project/project-sample-2-1.png',
-    backImage: '/images/project/project-sample-2-2.png',
-    title: 'E-commerce API',
-    topics: ['Backend System', 'Node.js', 'NestJS', 'PostgreSQL', 'Docker'],
+    frontImage: '/images/projects/portfolio.png',
+    backImage: '/images/projects/portfolio.png',
+    title: 'Portfolio',
+    topics: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'Vercel Deployment'],
+    githubUrl: 'https://github.com/LordwXdev/LordwXdev.github.io',
   },
   {
     frontImage: '/images/project/project-sample-3-1.png',
