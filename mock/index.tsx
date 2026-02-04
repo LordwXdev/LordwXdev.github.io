@@ -74,8 +74,8 @@ export const PROJECTS: ProjectItem[] = [
     description: 'Personal portfolio with cinematic transitions.',
     image: '/images/projects/portfolio.png', // Changed from frontImage to image
     topics: ['Next.js', 'Framer Motion', 'Tailwind'],
-    liveUrl: 'https://lordwxdev.github.io/',
-    githubUrl: 'https://github.com/LordwXdev/LordwXdev.github.io',
+    //liveUrl: 'https://lordwxdev.github.io/',
+    //githubUrl: 'https://github.com/LordwXdev/LordwXdev.github.io',
     category: 'Next.js'
   },
   {
@@ -83,8 +83,8 @@ export const PROJECTS: ProjectItem[] = [
     description: 'Scalable chat application.',
     image: '/images/project/project-sample-3-1.png', // This fixed the "missing src" error
     topics: ['Next.js', 'Redis', 'WebSocket'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/LordwXdev',
+    //liveUrl: '#',
+    //githubUrl: 'https://github.com/LordwXdev',
     category: 'Next.js'
   },
   {
@@ -92,8 +92,8 @@ export const PROJECTS: ProjectItem[] = [
     description: "Real-time analytics dashboard with interactive charts, data visualization, and export features.",
     image: "/images/projects/analytics.png",
     topics: ["React", "D3.js", "Recharts", "TypeScript"],
-    liveUrl: "https://analytics-dash.vercel.app",
-    githubUrl: "https://github.com/yourusername/analytics",
+    //liveUrl: "https://analytics-dash.vercel.app",
+    //githubUrl: "https://github.com/yourusername/analytics",
     category: "Dashboard System"
   },
   {
@@ -101,8 +101,8 @@ export const PROJECTS: ProjectItem[] = [
     description: "Full-featured blogging platform with MDX support, syntax highlighting, and SEO optimization.",
     image: "/images/projects/blog.png",
     topics: ["Next.js", "MDX", "Contentlayer", "TypeScript"],
-    liveUrl: "https://blog-platform.vercel.app",
-    githubUrl: "https://github.com/yourusername/blog",
+    //liveUrl: "https://blog-platform.vercel.app",
+    //githubUrl: "https://github.com/yourusername/blog",
     category: "Next.js"
   },
   {
@@ -110,8 +110,8 @@ export const PROJECTS: ProjectItem[] = [
     description: "Real-time weather application with location search, 7-day forecast, and beautiful UI animations.",
     image: "/images/projects/weather.png",
     topics: ["React", "OpenWeather API", "CSS3"],
-    liveUrl: "https://weather-app.vercel.app",
-    githubUrl: "https://github.com/yourusername/weather",
+    //liveUrl: "https://weather-app.vercel.app",
+    //githubUrl: "https://github.com/yourusername/weather",
     category: "React"
   },
   {
@@ -119,32 +119,32 @@ export const PROJECTS: ProjectItem[] = [
     description: "RESTful API for task management with authentication, CRUD operations, and real-time notifications.",
     image: "/images/projects/api.png",
     topics: ["Node.js", "Express", "PostgreSQL", "JWT"],
-    liveUrl: "https://api-docs.vercel.app",
-    githubUrl: "https://github.com/yourusername/task-api",
+    //liveUrl: "https://api-docs.vercel.app",
+    //githubUrl: "https://github.com/yourusername/task-api",
     category: "Backend System"
   },
 ]
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: 'John Doe',
+    name: '2222',
     avatar: '/images/user/avatar-3.png',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    profession: 'CEO of Acme Inc.',
+      '@',
+    profession: 'CEO',
   },
   {
-    name: 'Jane Smith',
+    name: '2222',
     avatar: '/images/user/avatar-2.png',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      '@',
     profession: 'Product Manager',
   },
   {
-    name: 'Bob Johnson',
+    name: '111111',
     avatar: '/images/user/avatar.png',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      '@',
     profession: 'Software Engineer',
   },
 ]
