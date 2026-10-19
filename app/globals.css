@@ -46,9 +46,9 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.995 0.002 60);
   --foreground: oklch(0.145 0 0);
-  --card: #f3f4f6;
+  --card: oklch(0.985 0.003 60);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -80,11 +80,11 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.16 0.005 50);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.2 0.006 50);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.2 0.006 50);
   --popover-foreground: oklch(0.985 0 0);
   --primary: #ff6300;
   --primary-foreground: oklch(0.205 0 0);
@@ -124,99 +124,15 @@
 
 @layer utilities {
   .app-container {
-    @apply container max-w-[1400px] mx-auto px-4 md:px-4 lg:px-8;
-  }
-
-  .social-icon {
-    @apply w-8 h-8 hover:text-primary transition duration-300;
-  }
-
-  /* ===== Apple Liquid Glass ===== */
-  .glass {
-    background: linear-gradient(
-      135deg,
-      rgba(255,255,255,0.18),
-      rgba(255,255,255,0.05)
-    );
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.3),
-      0 8px 32px rgba(0,0,0,0.12);
-    border-radius: 2rem;
-    transition: all 0.35s ease;
-  }
-
-  .glass-dark {
-    background: linear-gradient(
-      135deg,
-      rgba(15,23,42,0.6),
-      rgba(15,23,42,0.35)
-    );
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .glass-orange-glow {
-    box-shadow:
-      0 0 0 1px rgba(255,99,0,0.25),
-      0 10px 40px rgba(255,99,0,0.35);
-  }
-
-  .glass-hover:hover {
-    transform: translateY(-1px);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.4),
-      0 16px 48px rgba(0,0,0,0.18);
-  }
-  /* ===== Infinite Skills Marquee ===== */
-
-.marquee {
-  display: flex;
-  gap: 1.25rem;
-  width: max-content;
-  animation: marquee 35s linear infinite;
-}
-
-.skill-pill {
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  white-space: nowrap;
-  color: var(--foreground);
-}
-.glass-water {
-  /* This ensures the 'water' reflection has enough surface to show up */
-  min-height: 45px; 
-  display: flex;
-  align-items: center;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 }
 
-/* Mobile tuning */
-@media (max-width: 640px) {
-  .marquee {
-    animation-duration: 45s;
-  }
-}
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-padding-top: 5rem;
 }
 
-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  min-height: 100vh; /* Every section becomes a full slide */
-}
+section[id] {
+  scroll-margin-top: 5rem;
 }
