@@ -1,150 +1,95 @@
-import { ProjectItem, Service, Testimonial } from '@/types'
+import { Project } from '@/types'
 
-export const SERVICES: Service[] = [
-  {
-    key: 'frontend',
-    title: 'Frontend (React/Next.js)',
-    description: 'Build fast, accessible UIs with solid SEO and Core Web Vitals.',
-    image: '/images/services/frontend.png', // use an image
-    highlights: ['Next.js App Router', 'shadcn/ui + Tailwind', 'SSR/ISR'],
-  },
-  {
-    key: 'backend',
-    title: 'Backend API (Node/NestJS)',
-    description: 'Design secure REST/GraphQL APIs with authentication and rate limiting.',
-    image: '/images/services/backend.png',
-    highlights: ['Modular NestJS', 'JWT/OAuth', 'Caching'],
-  },
-  {
-    key: 'microservices',
-    title: 'Microservices & Messaging',
-    description: 'Decouple services and scale with asynchronous communication.',
-    image: '/images/services/microservices.png',
-    highlights: ['RabbitMQ', 'Event-driven', 'API Gateway'],
-  },
-  {
-    key: 'database',
-    title: 'Database & ORM',
-    description: 'Schema design and query optimization for high throughput.',
-    image: '/images/services/database.png',
-    highlights: ['Postgres/MongoDB', 'Prisma/Mongoose', 'Indexing'],
-  },
-  {
-    key: 'devops',
-    title: 'DevOps & CI/CD',
-    description: 'Reliable deployments with automated pipelines and rollbacks.',
-    image: '/images/services/devops.png',
-    highlights: ['Docker/PM2', 'GitHub Actions', 'Zero-downtime'],
-  },
-  {
-    key: 'cloud',
-    title: 'Cloud & Infrastructure',
-    description: 'Hardened environments with monitoring, logging, and SSL.',
-    image: '/images/services/cloud.png',
-    highlights: ['Nginx/SSL', 'AWS/Azure/VPS', 'Observability'],
-  },
-  {
-    key: 'performance',
-    title: 'Performance & SEO',
-    description: 'Speed audits and search visibility for business impact.',
-    image: '/images/services/performance.png',
-    highlights: ['Image/CDN', 'Bundle analysis', 'sitemap/robots'],
-  },
-  {
-    key: 'qa',
-    title: 'Testing & Quality',
-    description: 'Confidence before release with automated testing.',
-    image: '/images/services/qa.png',
-    highlights: ['Jest/Playwright', 'Type checking', 'E2E'],
-  },
-]
+const GITHUB = 'https://github.com/LordwXdev'
 
-export const PROJECTS: ProjectItem[] = [
+export const PROJECTS: Project[] = [
   {
-    title: 'Pale Kreyol',
-    description: 'Linguistic platform for Kreyol language promotion.',
-    image: '/images/projects/palekreyol.png', // Changed from frontImage to image
-    topics: ['Next.js', 'TypeScript', 'Tailwind'],
+    title: 'Loopzz',
+    description:
+      'Music and live streaming platform. Artists upload tracks, go live and get tips. Fans chat in real time and find new music through a ranked feed.',
+    category: 'Full-stack',
+    tech: ['Next.js', 'NestJS', 'PostgreSQL', 'Prisma', 'Socket.IO', 'Docker'],
+    githubUrl: `${GITHUB}/Loopzz`,
+    featured: true,
+  },
+  {
+    title: 'Aynix',
+    description:
+      'E-commerce marketplace for Haiti. Local vendors run their own stores, customers order from them. Built as a modular monolith so it can split into services later.',
+    category: 'Backend',
+    tech: ['TypeScript', 'Express 5', 'PostgreSQL', 'Prisma', 'JWT'],
+    githubUrl: `${GITHUB}/aynix`,
+    status: 'In progress',
+    featured: true,
+  },
+  {
+    title: 'Pale Kreyòl',
+    description:
+      'Web app to learn and promote Haitian Creole, with an AI chat helper and Stripe payments.',
+    category: 'Full-stack',
+    tech: ['React', 'Vite', 'Tailwind', 'Firebase', 'Stripe'],
+    githubUrl: `${GITHUB}/pale-kreyol`,
     liveUrl: 'https://pale-kreyol.vercel.app/',
-    githubUrl: 'https://github.com/LordwXdev/pale-kreyol',
-    category: 'Next.js'
+    featured: true,
   },
   {
-    title: 'Portfolio',
-    description: 'Personal portfolio with cinematic transitions.',
-    image: '/images/projects/portfolio.png', // Changed from frontImage to image
-    topics: ['Next.js', 'Framer Motion', 'Tailwind'],
-    //liveUrl: 'https://lordwxdev.github.io/',
-    //githubUrl: 'https://github.com/LordwXdev/LordwXdev.github.io',
-    category: 'Next.js'
+    title: 'School Management',
+    description:
+      'System for running a school: students, teachers, attendance, fees, timetables and reports. Django API with a Next.js app for staff.',
+    category: 'Full-stack',
+    tech: ['Django', 'Python', 'Next.js', 'REST API'],
+    githubUrl: `${GITHUB}/smanagement`,
+    featured: true,
   },
   {
-    title: 'Realtime Chat App',
-    description: 'Scalable chat application.',
-    image: '/images/project/project-sample-3-1.png', // This fixed the "missing src" error
-    topics: ['Next.js', 'Redis', 'WebSocket'],
-    //liveUrl: '#',
-    //githubUrl: 'https://github.com/LordwXdev',
-    category: 'Next.js'
+    title: 'Quote API on Kubernetes',
+    description:
+      'Small PHP REST API deployed on MicroK8s with autoscaling, health checks and NGINX ingress.',
+    category: 'DevOps',
+    tech: ['PHP', 'Docker', 'Kubernetes', 'NGINX'],
+    githubUrl: `${GITHUB}/quote-api`,
   },
   {
-    title: "Analytics Dashboard",
-    description: "Real-time analytics dashboard with interactive charts, data visualization, and export features.",
-    image: "/images/projects/analytics.png",
-    topics: ["React", "D3.js", "Recharts", "TypeScript"],
-    //liveUrl: "https://analytics-dash.vercel.app",
-    //githubUrl: "https://github.com/yourusername/analytics",
-    category: "Dashboard System"
+    title: 'Text Analyzer',
+    description:
+      'Command-line tool that counts lines, words and characters, finds the most used words and searches a file. No memory leaks.',
+    category: 'Systems',
+    tech: ['C', 'CLI', 'Memory management'],
+    githubUrl: `${GITHUB}/text-analyzer`,
   },
   {
-    title: "Blog Platform",
-    description: "Full-featured blogging platform with MDX support, syntax highlighting, and SEO optimization.",
-    image: "/images/projects/blog.png",
-    topics: ["Next.js", "MDX", "Contentlayer", "TypeScript"],
-    //liveUrl: "https://blog-platform.vercel.app",
-    //githubUrl: "https://github.com/yourusername/blog",
-    category: "Next.js"
+    title: 'Contact Manager',
+    description:
+      'Terminal app to add, search, edit and delete contacts, saved to a file between runs.',
+    category: 'Systems',
+    tech: ['C', 'File I/O'],
+    githubUrl: `${GITHUB}/contact-manager`,
   },
   {
-    title: "Weather App",
-    description: "Real-time weather application with location search, 7-day forecast, and beautiful UI animations.",
-    image: "/images/projects/weather.png",
-    topics: ["React", "OpenWeather API", "CSS3"],
-    //liveUrl: "https://weather-app.vercel.app",
-    //githubUrl: "https://github.com/yourusername/weather",
-    category: "React"
+    title: 'LeetCode Solutions',
+    description: 'Over 140 solved problems, written in both C and C++.',
+    category: 'Systems',
+    tech: ['C', 'C++', 'Algorithms'],
+    githubUrl: `${GITHUB}/Leetcode`,
   },
   {
-    title: "Task Management API",
-    description: "RESTful API for task management with authentication, CRUD operations, and real-time notifications.",
-    image: "/images/projects/api.png",
-    topics: ["Node.js", "Express", "PostgreSQL", "JWT"],
-    //liveUrl: "https://api-docs.vercel.app",
-    //githubUrl: "https://github.com/yourusername/task-api",
-    category: "Backend System"
+    title: 'Console Toolkit',
+    description: 'Menu-driven calculator in the terminal with safe input handling.',
+    category: 'Systems',
+    tech: ['C'],
+    githubUrl: `${GITHUB}/console-toolkit`,
   },
 ]
 
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    name: '2222',
-    avatar: '/images/user/avatar-3.png',
-    content:
-      '@',
-    profession: 'CEO',
-  },
-  {
-    name: '2222',
-    avatar: '/images/user/avatar-2.png',
-    content:
-      '@',
-    profession: 'Product Manager',
-  },
-  {
-    name: '111111',
-    avatar: '/images/user/avatar.png',
-    content:
-      '@',
-    profession: 'Software Engineer',
-  },
+export const SKILLS: { group: string; items: string[] }[] = [
+  { group: 'Languages', items: ['C', 'C++', 'TypeScript', 'JavaScript', 'Python', 'PHP'] },
+  { group: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS', 'Vite'] },
+  { group: 'Backend', items: ['Node.js', 'Express', 'NestJS', 'Django', 'REST APIs', 'Socket.IO'] },
+  { group: 'Data & Ops', items: ['PostgreSQL', 'Prisma', 'Docker', 'Kubernetes', 'Linux', 'Git'] },
 ]
+
+export const SOCIALS = {
+  github: GITHUB,
+  linkedin: 'https://linkedin.com/in/Lordwish-SYLVAINCE',
+  email: 'lordwishsylvaince1236@gmail.com',
+}

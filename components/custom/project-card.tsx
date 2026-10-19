@@ -1,86 +1,77 @@
-'use client'
-
 import React from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Github, Globe, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Boxes, Github, Layers, Server, Terminal } from 'lucide-react'
+import { Project, ProjectCategory } from '@/types'
+import { cn } from '@/lib/utils'
 
-interface ProjectCardProps {
-  title: string
-  description: string
-  image: string
-  topics: string[]
-  liveUrl: string
-  githubUrl: string
-  category: string
+const CATEGORY_ICON: Record<ProjectCategory, React.ReactNode> = {
+  'Full-stack': <Layers size={18} />,
+  Backend: <Server size={18} />,
+  Systems: <Terminal size={18} />,
+  DevOps: <Boxes size={18} />,
 }
 
-const ProjectCard = ({ title, description, image, topics, liveUrl, githubUrl, category }: ProjectCardProps) => {
+const ProjectCard = ({ project }: { project: Project }) => {
+  const { title, description, category, tech, githubUrl, liveUrl, status, featured } = project
+  const mainUrl = liveUrl ?? githubUrl
+
   return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="group relative flex flex-col w-full max-w-[300px] h-[350px] bg-muted/30 border border-border/50 rounded-[20px] overflow-hidden backdrop-blur-sm hover:border-orange-500/50 transition-all duration-500"
+    <article
+      className={cn(
+        'group relative flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50',
+        featured && 'md:p-7',
+      )}
     >
-      {/* Image Container - Reduced height for a smaller card */}
-      <div className="relative h-36 w-full overflow-hidden">
-        <div className="absolute inset-0 bg-orange-500/5 group-hover:bg-transparent z-10 transition-colors duration-500" />
-        {image && (
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-            sizes="(max-width: 300px) 100vw, 300px"
-          />
-        )}
-        {category && (
-          <div className="absolute top-3 right-3 z-20">
-            <span className="px-2 py-0.5 bg-black/60 backdrop-blur-md text-orange-500 text-[9px] font-black uppercase tracking-widest rounded-full border border-white/10">
-              {category}
-            </span>
-          </div>
+      <div className="mb-5 flex items-center justify-between">
+        <span className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary/10 text-primary">
+            {CATEGORY_ICON[category]}
+          </span>
+          {category}
+        </span>
+        {status && (
+          <span className="rounded-full border border-yellow-500/30 bg-yellow-500/10 px-2.5 py-0.5 text-xs font-medium text-yellow-600 dark:text-yellow-400">
+            {status}
+          </span>
         )}
       </div>
 
-      {/* Content */}
-      <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-md font-black italic uppercase tracking-tighter mb-1 group-hover:text-orange-500 transition-colors line-clamp-1">
+      <h3 className={cn('font-bold tracking-tight', featured ? 'text-2xl' : 'text-lg')}>
+        {/* the whole card is clickable through this link */}
+        <a href={mainUrl} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0">
           {title}
-        </h3>
-        
-        <p className="text-muted-foreground text-[10px] line-clamp-2 mb-4 leading-relaxed">
-          {description}
-        </p>
+        </a>
+      </h3>
+      <p className="mt-2 flex-grow text-sm leading-relaxed text-muted-foreground">{description}</p>
 
-        {/* Tech Stack Tags */}
-        <div className="flex flex-wrap gap-1 mb-4 mt-auto">
-          {topics.slice(0, 3).map((tech) => (
-            <span 
-              key={tech} 
-              className="text-[8px] font-bold uppercase tracking-tighter px-2 py-0.5 bg-orange-500/5 text-orange-500 border border-orange-500/20 rounded-md"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+      <ul className="mt-5 flex flex-wrap gap-1.5">
+        {tech.map((t) => (
+          <li key={t} className="rounded-md bg-muted px-2 py-0.5 font-mono text-[11px] text-foreground/80">
+            {t}
+          </li>
+        ))}
+      </ul>
 
-        {/* Action Links */}
-        <div className="flex items-center justify-between pt-3 border-t border-border/50">
-          <div className="flex gap-3">
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Github size={16} />
-            </a>
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-orange-500 transition-colors">
-              <Globe size={16} />
-            </a>
-          </div>
-          
-          <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[9px] font-black uppercase tracking-widest text-orange-500 group-hover:translate-x-1 transition-transform">
-            View <ArrowUpRight size={12} />
+      <div className="relative z-10 mt-5 flex items-center gap-4 border-t border-border pt-4 text-sm">
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <Github size={16} /> Code
+        </a>
+        {liveUrl && (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+          >
+            Live site <ArrowUpRight size={15} />
           </a>
-        </div>
+        )}
       </div>
-    </motion.div>
+    </article>
   )
 }
 
