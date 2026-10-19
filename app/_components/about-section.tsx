@@ -12,12 +12,14 @@ const AboutSection = () => {
           <SectionTitle eyebrow="About" name="A bit about me" />
           <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
             <p>
-              I&apos;m a CS student from Haiti, now studying in Taipei. I started with C and C++ because I wanted to
-              know what happens under the hood: memory, files, pointers, all of it.
+              I&apos;m a junior software engineer who loves
+  building things that work. I enjoy the whole process: understanding the problem, designing
+  a simple solution, and shipping it. Actually based in Taipei, Im a student at Tamkang Univeristy.
             </p>
             <p>
-              Now I spend most of my time on full-stack work. I like clean backend structure, simple APIs, and
-              shipping things people can actually use, like tools built for the Haitian community.
+              I&apos;ve built full-stack apps from the ground up, including a live streaming platform, an
+  online marketplace, and a school management system. I started with C and C++, so I care
+  about how things work under the hood and I write code that&apos;s clean and easy to maintain.
             </p>
             <p>Right now I&apos;m looking for an internship where I can learn from a strong team.</p>
           </div>
