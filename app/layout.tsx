@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Lordwish Sylvaince | Software Developer',
   description:
-    'Portfolio of Lordwish Sylvaince, a computer science student who builds web apps, backends and C tools.',
+    'Portfolio of Lordwish Sylvaince, a passionate about sofware dev who like to build.',
   metadataBase: new URL('https://lordwxdev.github.io'),
   openGraph: {
     title: 'Lordwish Sylvaince | Software Developer',
